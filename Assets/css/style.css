@@ -12,6 +12,7 @@
     --condition_gap: 10px;
     --wind_img_height: 25px;
     --wind_img_margin_y: calc((var(--condition_img_height) - var(--wind_img_height)) / 2);
+    --wind_degree: 0;
 }
 
 h1 {
@@ -72,4 +73,5 @@ main {
 .wind img {
     margin: var(--wind_img_margin_y) 0;
     height: var(--wind_img_height);
+    transform: rotate(calc(var(--wind_degree) * 1deg));
 }

@@ -16,17 +16,16 @@
         <div class="weather">
             <p id="localisation">NIORT</p>
             <div class="api_data">
-                <p class="temperature" id="temperature">6°C</p>
+                <p class="temperature" id="temperature"><!-- injected --></p>
                 <div class="condition" id="condition">
-                    <img src="./Assets/icon/cloudy.svg" alt="Icône de temps couvert">
-                    <p>Couvert</p>
+                    <!-- injected -->
                 </div>
-                <div class="wind" id="wind">
-                    <img src="./Assets/icon/SO.svg" alt="Vent venant du Sud-Ouest">
-                    <p>15 km/h</p>
+                <div class="wind">
+                    <img id="wind_arrow" src="./Assets/icon/_wind_arrow.svg" alt="Vent venant du Sud-Ouest">
+                    <p id="wind"><!-- injected --></p>
                 </div>
             </div>
-            <p><em>mise à jour à 11:06</em></p>
+            <p><em id="updatedAt"><!-- injected --></em></p>
         </div>
     </main>
 </body>
