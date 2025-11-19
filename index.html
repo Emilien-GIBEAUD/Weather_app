@@ -5,14 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Emilien GIBEAUD">
     <meta name="description" content="Cette application affiche la météo de la ville configurée (mise à jour toute les heures).">
-    <link rel="stylesheet" href="style.css">
-    <script defer type="module" src="weather.js"></script>
+    <link rel="stylesheet" href="./Assets/css/style.css">
+    <script defer type="module" src="./Assets/js/weather.js"></script>
     <title>La météo dehors</title>
 </head>
 <body>
     <main>
         <h1>Quel temps fait-il dehors ?</h1>
         <p>... Application en construction ...</p>
+        <div class="weather">
+            <p id="localisation">NIORT</p>
+            <div class="api_data">
+                <p class="temperature" id="temperature">6°C</p>
+                <div class="condition" id="condition">
+                    <img src="./Assets/icon/cloudy.svg" alt="Icône de temps couvert">
+                    <p>Couvert</p>
+                </div>
+                <div class="wind" id="wind">
+                    <img src="./Assets/icon/SO.svg" alt="Vent venant du Sud-Ouest">
+                    <p>15 km/h</p>
+                </div>
+            </div>
+            <p><em>mise à jour à 11:06</em></p>
+        </div>
     </main>
 </body>
 </html>
