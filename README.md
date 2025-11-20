@@ -14,9 +14,6 @@ L'application est accessible sur la GitHub Page suivante :
 Les icones de conditions météo proviennent de ce dépôt GitHub : <br>
 [https://github.com/M00NJ/material-weather-icons](https://github.com/M00NJ/material-weather-icons)
 
-Les icones de direction de vent proviennent de ce dépôt GitHub : <br>
-[add if necessary](https://github.com/xxx)
-
 <br>
 <br>
 
@@ -34,6 +31,3 @@ You can access to the app with this GitHub Page :
 
 The weather condition icons come from this GitHub repository : <br>
 [https://github.com/M00NJ/material-weather-icons](https://github.com/M00NJ/material-weather-icons)
-
-The wind orientation icons come from this GitHub repository : <br>
-[add if necessary](https://github.com/xxx)

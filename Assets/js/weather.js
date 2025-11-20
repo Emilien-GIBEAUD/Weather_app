@@ -1,4 +1,6 @@
-const url = "https://api.open-meteo.com/v1/forecast?latitude=46.3231&longitude=-0.4588&current=temperature_2m,wind_speed_10m,weather_code,wind_direction_10m&timezone=Europe/Paris";
+import { conf } from '../../conf.js';
+
+const url = `https://api.open-meteo.com/v1/forecast?latitude=${conf.latitude}&longitude=${conf.longitude}&current=temperature_2m,wind_speed_10m,weather_code,wind_direction_10m&timezone=Europe/Paris`;
 
 const weather_code = [
     [0 , "Ciel clair",                  "./Assets/icon/clear_day.svg"],
@@ -32,12 +34,22 @@ const weather_code = [
 ];
 
 try {
-    const data = await fetchWeather(url);
-    insertWeatherData(data);
+    updateWeather(async () => {
+        const data = await fetchWeather(url);
+        insertWeatherData(data);
+        const date = new Date();
+        console.log(date);
+    });
 } catch (error) {
     alert("Erreur : "+ error.message);
 }
 
+/**
+ * Get weather data from "open-meteo.com" using an HTTP GET request.
+ * @param {string} url The url string with the parameters.
+ * @async
+ * @returns {Promise<Response>} A promise with the fetch response.
+ */
 async function fetchWeather(url) {
     const response = await fetch(url);
     if (!response.ok) {
@@ -46,7 +58,15 @@ async function fetchWeather(url) {
     return response.json();
 }
 
+/**
+ * Insert the weather data in the HTML.
+ * @param {object} data An objet with the weather data (can come from the function fetchWeather(url)).
+ */
 function insertWeatherData(data) {
+    // Localisation
+    const localisation = document.getElementById("localisation");
+    localisation.textContent = conf.town.toUpperCase();
+
     // Temperature
     const temperature = document.getElementById("temperature");
     temperature.textContent = Math.round(data.current.temperature_2m) + data.current_units.temperature_2m;
@@ -67,6 +87,19 @@ function insertWeatherData(data) {
 
     // updatedAt
     const updatedAt = document.getElementById("updatedAt");
-    updatedAt.textContent = "Mis à jour à " + new Date(data.current.time).toLocaleTimeString("fr-FR", {hour: "2-digit",minute: "2-digit"});;
+    updatedAt.textContent = "Mis à jour à " + new Date(data.current.time).toLocaleTimeString("fr-FR", {hour: "2-digit",minute: "2-digit"});
 }
 
+function updateWeather(callback) {
+    callback();                                                 // Initial call
+
+    const minutes = new Date().getMinutes();
+    const afterNextQuarter = minutes % 15;
+    const beforeNextQuarter = afterNextQuarter === 0 ? 60 : 15 - afterNextQuarter;
+    const firstInterval = beforeNextQuarter * 60 * 1000;        // Time until the next quarter hour
+    setTimeout(() => {                                          // Call at the next quarter
+        callback();
+
+        setInterval(callback, 60 * 60 * 1000);                  // Then every hour
+    }, firstInterval);
+}
