@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+
+  <!-- Fond arrondi -->
+  <rect x="80" y="80" width="864" height="864" rx="220" fill="#7BCAF3"></rect>
+
+  <!-- Soleil en haut à gauche -->
+  <g stroke="#162D50" stroke-width="28" stroke-linecap="round">
+    <circle cx="260" cy="260" r="90" fill="#FFCE2D"></circle>
+
+    <!-- Rayons tous les 45° -->
+    <!-- 0° -->
+    <line x1="370" y1="260" x2="420" y2="260"></line>
+    <!-- 45° -->
+    <line x1="337.8" y1="337.8" x2="373.1" y2="373.1"></line>
+    <!-- 90° -->
+    <line x1="260" y1="370" x2="260" y2="420"></line>
+    <!-- 135° -->
+    <line x1="182.2" y1="337.8" x2="146.9" y2="373.1"></line>
+    <!-- 180° -->
+    <line x1="150" y1="260" x2="100" y2="260"></line>
+    <!-- 225° -->
+    <line x1="182.2" y1="182.2" x2="146.9" y2="146.9"></line>
+    <!-- 270° -->
+    <line x1="260" y1="150" x2="260" y2="100"></line>
+    <!-- 315° -->
+    <line x1="337.8" y1="182.2" x2="373.1" y2="146.9"></line>
+  </g>
+
+  <!-- Tramway déplacé à droite pour ne plus cacher le soleil -->
+  <g stroke-linejoin="round" stroke-linecap="round">
+    <!-- Corps -->
+    <rect x="420" y="360" width="320" height="420" rx="80" fill="#162D50" stroke="#000856" stroke-width="32"></rect>
+
+    <!-- Fenêtre avant -->
+    <rect x="455" y="390" width="250" height="200" rx="30" fill="#A7E9FD" stroke="#000856" stroke-width="24"></rect>
+
+    <!-- Phares -->
+    <circle cx="500" cy="630" r="35" fill="#FFCE2D" stroke="#000856" stroke-width="18"></circle>
+    <circle cx="660" cy="630" r="35" fill="#FFCE2D" stroke="#000856" stroke-width="18"></circle>
+
+    <!-- Prise d'air / pare-choc -->
+    <rect x="550" y="615" width="80" height="24" rx="10" fill="#162D50"></rect>
+
+    <!-- Toit -->
+    <rect x="470" y="320" width="220" height="40" rx="15" fill="#162D50" stroke="#000856" stroke-width="24"></rect>
+
+    <!-- Pantographe -->
+    <g fill="none" stroke="#000856" stroke-width="28">
+      <line x1="580" y1="320" x2="580" y2="280"></line>
+      <polygon points="520,280 580,220 640,280 580,280" fill="none"></polygon>
+      <line x1="520" y1="220" x2="640" y2="220"></line>
+    </g>
+  </g>
+
+  <!-- Rails -->
+  <g fill="#162D50">
+    <polygon points="480,780 420,900 460,900 520,780"></polygon>
+    <polygon points="664,780 724,900 764,900 704,780"></polygon>
+    <rect x="480" y="760" width="184" height="38" rx="10"></rect>
+  </g>
+
+</svg>

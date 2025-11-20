@@ -87,7 +87,7 @@ function insertWeatherData(data) {
 
     // updatedAt
     const updatedAt = document.getElementById("updatedAt");
-    updatedAt.textContent = "Mis à jour à " + new Date(data.current.time).toLocaleTimeString("fr-FR", {hour: "2-digit",minute: "2-digit"});
+    updatedAt.textContent = "Dernière mise à jour à " + new Date(data.current.time).toLocaleTimeString("fr-FR", {hour: "2-digit",minute: "2-digit"});
 }
 
 function updateWeather(callback) {
